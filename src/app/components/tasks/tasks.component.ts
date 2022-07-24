@@ -28,4 +28,10 @@ export class TasksComponent implements OnInit {
     elem.reminder = !elem.reminder;
     this.taskService.updateTaskReminder(elem).subscribe();
   }
+
+  addTask(algo:Task){
+    this.taskService.addTask(algo).subscribe((algo)=>{
+      this.tasks.push(algo);
+    })
+  }
 }
